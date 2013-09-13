@@ -1,49 +1,65 @@
-<head>
-	<title>Accounts</title>
-</head>
-<body>
-	{{> header}}
-</body>
-<template name="header">
-	<div class="navbar">
-		<div class="navbar-inner">
-			<div class="container">
-				<div class="nav pull-right">
-					{{> user_info}}
-				</div>
-			</div>
-		</div>
-	</div>
-</template>
-<template name="user_info">
-	<ul class="nav pull-right">
-		{{#if currentUser}}
-			{{> user_loggedin}}
-		{{else}}
-			{{> user_loggedout}}
-		{{/if}}
-	</ul>
-</template>
-<template name="user_loggedin">
-	{{#if loggingIn}}
-		<li><a href="#">Loggin in...</a></li>
-	{{else}}
-		<li>
-			<img src="{{currentUser.profile.avatar_url}}" alt="" class="img-rounded" style="height:32px;margin-top:4px;">
-		</li>
-		<li class="dropdown">
-			<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-				{{currentUser.profile.login}}
-				<b class="caret"></b>
-			</a>
-			<ul class="dropdown-menu">
-				<li><a href="#">Account settings</a></li>
-				<li class="divider"></li>
-				<li><a href="#" id="logout">Logout</a></li>
-			</ul>
-		</li>
-	{{/if}}
-</template>
-<template name="user_loggedout">
-	<li><a href="#" id="login">Login with Facebook</a></li>
-</template>
+  <head>
+    <title>Bus Information</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.0.0/flatly/bootstrap.min.css">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  </head>
+  
+  <body>
+    <div class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+          </button>
+          <a href="#" class="navbar-brand">Bus Information</a>
+        </div>
+        <div class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li class="active">
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Login</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12 text-center">
+          <div class="btn-group" data-toggle="buttons">
+            <label class="btn btn-success">
+              <input type="radio" name="options" id="favorite" checked="true">Favorite</label>
+            <label class="btn btn-warning">
+              <input type="radio" name="options" id="North">North</label>
+            <label class="btn btn-info">
+              <input type="radio" name="options" id="Middle">Middle</label>
+            <label class="btn btn-danger">
+              <input type="radio" name="options" id="South">South</label>              
+          </div>
+        </div>
+      </div>      
+      <hr>
+      <div class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+          <a href="#" class="thumbnail text-center"><img src="http://placehold.it/250x200" class="img-rounded"></a>
+          <h4>Ha Noi</h4>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+          <a href="#" class="thumbnail">            <img src="http://placehold.it/250x200" class="img-rounded">                    </a> <h4><h4>Ha Noi</h4>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+          <a href="#" class="thumbnail">            <img src="http://placehold.it/250x200" class="img-rounded">                    </a> <h4><h4>Ha Noi</h4>
+        </div>
+        <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+          <a href="#" class="thumbnail">            <img src="http://placehold.it/250x200" class="img-rounded">                    </a> <h4><h4>Ha Noi</h4>
+        </div>
+      </div>      
+    </div>
+  </body>
