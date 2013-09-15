@@ -1,0 +1,72 @@
+<head>
+  <title>Bus Information</title>
+  <meta name="viewport" content="width=device-width">
+  <!-- <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootswatch/3.0.0/flatly/bootstrap.min.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+  <script type="text/javascript" src="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>-->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  {{> navbar}}  
+  <div class="container">
+    <div class="row">
+      {{> regions}}
+    </div>      
+    <hr>      
+    <div class="row">
+      {{> cities}}
+    </div>         
+  </div>
+</body>
+<template name="navbar">
+  <div class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">Bus Information</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li class="active">
+            <a href="#">Home</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+          <li>
+            <a href="#">Login</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</template>
+<template name="regions">
+  <div class="col-xs-12 text-center">
+    <div class="btn-group" data-toggle="buttons" id="regionsGroup">
+      <label class="btn btn-success">
+        <input type="radio" name="options" id="favorite" checked="true">Ưa thích</label>
+      <label class="btn btn-warning">
+        <input type="radio" name="options" id="Bắc">Bắc</label>
+      <label class="btn btn-info">
+        <input type="radio" name="options" id="Trung">Trung</label>
+      <label class="btn btn-danger">
+        <input type="radio" name="options" id="Nam">Nam</label>              
+    </div>
+  </div>
+</template>
+<template name="cities">
+  {{#each cities}}
+    <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+      <a href="#" class="thumbnail">
+        <img src="images/cities/{{imageUrl}}" class="img-rounded">
+      </a>
+      <h4>{{name}}</h4>
+    </div>
+  {{/each}}
+</template>
