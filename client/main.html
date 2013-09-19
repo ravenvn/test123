@@ -11,15 +11,10 @@
 
 <body>
   {{> navbar}}  
-  <div class="container">
-    {{> guide}}
-    <div class="row">
-      {{> regions}}
-    </div>      
-    <hr>      
-    <div class="row">
-      {{> cities}}
-    </div>
+  <div class="container">    
+    {{> regions}}          
+    <hr>
+    {{> cities}}    
   </div>
 </body>
 
@@ -49,26 +44,30 @@
   </div>
 </template>
 <template name="regions">
-  <div class="col-xs-12 text-center">
-    <div class="btn-group" data-toggle="buttons" id="regionsGroup">
-      <label class="btn btn-success">
-        <input type="radio" name="options" id="favorite" checked="true">Ưa thích</label>
-      <label class="btn btn-warning">
-        <input type="radio" name="options" id="Bắc">Bắc</label>
-      <label class="btn btn-info">
-        <input type="radio" name="options" id="Trung">Trung</label>
-      <label class="btn btn-danger">
-        <input type="radio" name="options" id="Nam">Nam</label>
+  <div class="row">
+    <div class="col-xs-12 text-center">
+      <div class="btn-group" data-toggle="buttons" id="regionsGroup">
+        <label class="btn btn-success">
+          <input type="radio" name="options" id="favorite" checked="true">Ưa thích</label>
+        <label class="btn btn-warning">
+          <input type="radio" name="options" id="Bắc">Bắc</label>
+        <label class="btn btn-info">
+          <input type="radio" name="options" id="Trung">Trung</label>
+        <label class="btn btn-danger">
+          <input type="radio" name="options" id="Nam">Nam</label>
+      </div>
     </div>
   </div>
 </template>
 <template name="cities">
-  {{#each cities}}
-    <div class="col-xs-6 col-sm-4 col-md-3 text-center">
-      <a href="#" class="thumbnail">
-        <img src="images/cities/{{imageUrl}}" class="img-rounded">
-      </a>
-      <h4>{{name}}</h4>
-    </div>
-  {{/each}}
+  <div class="row">
+    {{#each cities}}
+      <div class="col-xs-6 col-sm-4 col-md-3 text-center">
+        <a href="#" class="thumbnail">
+          <img src="images/cities/{{imageUrl}}" class="img-rounded">
+        </a>
+        <h4>{{name}}</h4>
+      </div>
+    {{/each}}
+  </div>
 </template>

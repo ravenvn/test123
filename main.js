@@ -1,1 +1,0 @@
-cities = new Meteor.Collection("cities");

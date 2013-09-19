@@ -1,5 +1,5 @@
 Template.cities.cities = function() {
-	return cities.find({region: Session.get("currentRegion")}, {sort: {name: 1}});
+	return Cities.find({region: Session.get("currentRegion")}, {sort: {name: 1}});
 };
 
 Template.regions.events({
